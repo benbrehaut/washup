@@ -1,0 +1,13 @@
+.input {
+    appearance: none;
+    background-color: var(--color-white);
+    border: 1px solid var(--color-grey-light);
+    border-radius: var(--border-radius);
+    caret-color: var(--color-grey);
+    color: var(--color-grey);
+    display: inline-block;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    padding: var(--spacing-3) var(--spacing-2);
+}
