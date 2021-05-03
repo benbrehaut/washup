@@ -1,9 +1,16 @@
 {
-  "name": "washup",
-  "short_name": "washup",
-  "start_url": "/",
-  "display": "standalone",
-  "orientation": "portrait",
-  "background_color": "#fff",
-  "theme_color": "#673ab8"
+    "name": "washup",
+    "short_name": "washup",
+    "start_url": "/",
+    "display": "standalone",
+    "orientation": "portrait",
+    "background_color": "#fff",
+    "theme_color": "#0052CC",
+    "icons": [
+        {
+            "src": "/android-chrome-icon-192x192.png",
+            "type": "image/png",
+            "sizes": "192x192"
+        }
+    ]
 }
