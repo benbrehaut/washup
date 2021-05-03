@@ -1,0 +1,14 @@
+.c-text {
+    font-size: var(--font-size-3);
+    margin-top: 0;
+    margin-bottom: 0;
+
+    &--medium {
+        font-size: var(--font-size-2);
+    }
+
+    &--large {
+        font-size: var(--font-size-1);
+        font-weight: 600;
+    }
+}

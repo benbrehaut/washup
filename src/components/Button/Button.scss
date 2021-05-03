@@ -1,0 +1,57 @@
+.c-btn {
+    $outline-offset: -2px;
+    appearance: none;
+    border: 1px solid var(--color-blue);
+    background-color: var(--color-blue);
+    border: 0;
+    border-radius: var(--border-radius);
+    color: var(--color-white);
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--spacing-3) var(--spacing-1);
+    position: relative;
+    font-family: inherit;
+    min-width: 5.9rem;
+    min-height: 4.2rem;
+    font-size: var(--font-size-3);
+    transition: background 200ms ease-in-out;
+    text-decoration: none;
+
+    &:focus {        
+        &::after {
+            content: '';
+            border-radius: var(--border-radius);
+            position: absolute;
+            top: $outline-offset;
+            left: $outline-offset;
+            bottom:$outline-offset;
+            right: $outline-offset;
+            display: block;
+            outline: 2px solid transparent;
+            box-shadow: 0 0 0 2px var(--color-orange);
+        }
+    }
+}
+
+.c-btn__spinner {
+    animation: btn-spinner 0.5s linear infinite;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -1rem;
+    margin-left: -1rem;
+
+    svg {
+        height: 2rem;
+        width: 2rem;
+        fill: var(--color-white);
+    }
+
+    @keyframes btn-spinner {
+        to {
+            transform: rotate(360deg);
+        }
+    }
+}

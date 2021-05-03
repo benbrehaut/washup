@@ -1,36 +1,29 @@
-import { h } from 'preact';
-import { useState } from 'preact/hooks';
+import {h} from 'preact';
+import {useContext} from 'preact/hooks';
+import {Router} from 'preact-router';
+import AsyncRoute from 'preact-async-route';
+
 import {Header} from './components/Header';
-import {Card} from './components/Card';
-import {Emoji} from './components/Emoji';
-import {Input} from './components/Input';
+
+import Home from './routes/Home';
+
+import {UserContext} from "./providers/User";
+import {AlertsContainer} from './components/AlertsContainer';
 
 function App() {
-    const [count, setCount] = useState(0);
-    const increment = () => setCount(count + 1);
-    // You can also pass a callback to the setter
-    const decrement = () => setCount((currentCount) => currentCount - 1);
+    const user = useContext(UserContext);
 
     return(
-        <div class="app">
-            <div class="app__container">
-                <Header />
+        <div class="o-app">
+            <div class="o-app__container">
+                <Header signedIn={user} />
+                
+                <Router>
+                    <Home path="/" />
+                    <AsyncRoute path="/profile" getComponent={ () => import('./routes/Profile').then(module => module.default) } />
+                </Router>
 
-                <Card title="Members">
-                    <Emoji name="Cat">
-                        🐈
-                    </Emoji>
-
-                    <p>
-                        Emily
-                    </p>
-
-                    <Input name="field" value={count} labelID="test" />
-
-                    <button type="button" onClick={increment}>
-                        Plus
-                    </button>
-                </Card>
+                <AlertsContainer />
             </div>
         </div>
     );

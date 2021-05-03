@@ -1,0 +1,12 @@
+.c-avatar {
+    display: inline-block;
+    height: 2.2rem;
+    width: 2.2rem;
+}
+
+.c-avatar__picture {
+    background-color: var(--color-blue);
+    border-radius: 50%;
+    height: 100%;
+    width: 100%;
+}

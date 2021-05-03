@@ -1,0 +1,15 @@
+.c-stack {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-2);
+}
+
+.c-stack__group {
+    align-items: center;
+    display: flex;
+    flex: 0 0 auto;
+
+    &--fill {
+        flex: 1 1 auto;
+    }
+}

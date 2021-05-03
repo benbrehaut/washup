@@ -4,7 +4,7 @@ import './Emoji.scss';
 const Emoji = ({
     name, children
 }) => (
-    <span class="emoji" role="img" aria-label={name} title={name}>
+    <span class="c-emoji" role="img" aria-label={name} title={name}>
         {children}
     </span>
 );

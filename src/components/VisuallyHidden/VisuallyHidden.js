@@ -5,7 +5,7 @@ const VisuallyHidden = ({
     element: Element = 'span',
     children
 }) => (
-    <Element class="visually-hidden">
+    <Element class="c-visually-hidden">
         {children}
     </Element>
 );

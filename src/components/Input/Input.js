@@ -1,16 +1,30 @@
 import { h } from 'preact';
-import {VisuallyHidden} from './../VisuallyHidden';
 import './Input.scss';
 
-const Input = ({
-    value, labelID
-}) => (
-    <>
-        <VisuallyHidden htmlFor={labelID} element="label">
-            Amount
-        </VisuallyHidden>
-        <input id={labelID} class="input" type="text" value={value} />
-    </>
-);
+function Input ({
+    value, 
+    labelID,
+    label,
+    onChange,
+    disabled,
+    name,
+    readOnly,
+    type: type = 'text',
+}) {
+    const commonProps = {
+        disabled,
+        onChange,
+        value,
+        type,
+        readOnly,
+        name
+    }
+
+    return (
+        <div class="c-input">
+            <input id={labelID} aria-label={label} class="c-input__field" {...commonProps} />
+        </div>      
+    )
+};
 
 export {Input};

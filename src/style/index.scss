@@ -6,8 +6,11 @@
     --color-grey-light: #C9CCCF;
     --color-orange: #FF8B00;
     --color-background: #F6F6F7;
+    --color-green: #00875a;
+    --color-red: #dd360c;
     --font-size-1: 2.2rem;
     --font-size-2: 1.6rem;
+    --font-size-3: 1.4rem;
     --spacing-1: 2.0rem;
     --spacing-2: 1.6rem;
     --spacing-3: 1.0rem;
@@ -41,16 +44,31 @@ body {
     }
 }
 
-.app {
+// Objects
+.o-app {
     height: 100%;
     margin-top: var(--spacing-2);
 }
 
-.app__container {
+.o-app__container {
     max-width: var(--layout-max-width);
     margin-left: auto;
     margin-right: auto;
     width: 100%;
     padding-left: var(--spacing-3);
     padding-right: var(--spacing-3);
+    position: relative;
+}
+
+// Utilities
+$spacing-amounts: (
+    1: var(--spacing-1),
+    2: var(--spacing-2),
+    3: var(--spacing-3)
+);
+
+@each $amount, $space in $spacing-amounts {
+   .u-margin-bottom-#{$amount} {
+       margin-bottom: $space;
+   }
 }

@@ -1,11 +1,18 @@
-.app-header {
-    display: flex;
+.c-app-header {
     margin-bottom: var(--spacing-2);
 }
 
-.app-header__title {
-    font-size: var(--font-size-1);
-    font-weight: 600;
-    margin-bottom: 0;
-    margin-top: 0;
+.c-app-header__link {
+    color: var(--color-grey-dark);
+    text-decoration: none;
+    transition: color 200ms ease-in-out;
+
+    &:hover,
+    &:focus {
+        color: var(--color-blue);
+    }
+
+    &:focus {
+        outline: 2px solid var(--color-orange);
+    }
 }

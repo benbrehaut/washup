@@ -1,4 +1,15 @@
-.input {
+.c-input {
+    align-items: center;
+    display: flex;
+}
+
+.c-input__label {
+    font-size: var(--font-size-1);
+    font-weight: bold;
+    margin-right: var(--spacing-2);
+}
+
+.c-input__field {
     appearance: none;
     background-color: var(--color-white);
     border: 1px solid var(--color-grey-light);
@@ -10,4 +21,6 @@
     font-size: inherit;
     font-weight: inherit;
     padding: var(--spacing-3) var(--spacing-2);
+    text-align: center;
+    width: 6rem;
 }
