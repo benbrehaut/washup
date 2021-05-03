@@ -1,41 +1,35 @@
-import {h, Component} from 'preact';
+import {h} from 'preact';
 import {auth} from '../firebase';
 import {createContext} from 'preact';
+import { useEffect, useRef, useState } from 'preact/hooks';
 
 export const UserContext = createContext({ 
     user: null
 });
 
-class UserProvider extends Component {
-    hasMounted = false;
-
-    state = {
-        user: null
-    };
+function UserProvider({
+    children
+}) {
+    const [user, setUser] = useState(null);
+    const isCurrent = useRef(true)
     
-    componentDidMount = () => {
-        this.hasMounted = true;
-
+    useEffect(() => {
         auth.onAuthStateChanged(userAuth => {
-            if (this.hasMounted) {
-                this.setState({ 
-                    user: userAuth
-                });
+            if (isCurrent.current) {
+                setUser(userAuth);
             }
         });
-    };
 
-    componentWillUnmount = () => {
-        this.hasMounted = false;
-    }
+        return () => {
+            isCurrent.current = false;
+        }
+    }, []);
 
-    render() {
-        return (
-            <UserContext.Provider value={this.state.user}>
-                {this.props.children}
-            </UserContext.Provider>
-        );
-    }
+    return (
+        <UserContext.Provider value={user}>
+            {children}
+        </UserContext.Provider>
+    );
 }
 
 export default UserProvider;

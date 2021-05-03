@@ -6,11 +6,11 @@ import './style';
 
 function Root() {
     return(
-        <UserProvider>
-            <AlertProvider>
+        <AlertProvider>
+            <UserProvider>
                 <App />
-            </AlertProvider>
-        </UserProvider>
+            </UserProvider>
+        </AlertProvider>
     )
 }
 
