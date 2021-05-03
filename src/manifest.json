@@ -8,7 +8,7 @@
     "theme_color": "#0052CC",
     "icons": [
         {
-            "src": "/android-chrome-icon-192x192.png",
+            "src": "/assets/android-chrome-icon-192x192.png",
             "type": "image/png",
             "sizes": "192x192"
         }
