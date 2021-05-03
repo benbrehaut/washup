@@ -18,6 +18,7 @@ const Header = ({
 
     const handleSignIn = () => {
         SignInWithGoogle().then(() => {
+            console.log('fsafsa')
             dispatch({ type: ADD_ALERT, payload: { id: 'signed-in-success', message: `Signed in`, type: 'success' } })
         })
         .catch((error) => {

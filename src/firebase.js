@@ -21,34 +21,12 @@ export const firestore = firebase.firestore();
 
 export const SignInWithGoogle = () => {
     const googleSignInPromise = new Promise((resolve, reject) => {
-        auth.signInWithPopup(provider).then((resp) => {
-            const user = resp.user;
-            const userID = user.uid;
-            const name = user.displayName;
-            const store = firestore.collection(process.env.PREACT_APP_FIREBASE_COLLECTIONS);
-            const userInStore = store.doc(userID);
-    
-            userInStore.get().then((user) => {
-                resolve(user);
-                if (!user.exists) {
-                    store.doc(userID).set({ 
-                        userID,
-                        name,
-                        washes: 0
-                    })
-                    .catch((error) => {
-                        console.log(error);
-                        reject(error);
-                    });
-                }
-            })
-            .catch((error) => {
-                console.log(error);
-                reject(error);
-            });
+        const signInRedirect = auth.signInWithRedirect(provider)
+        
+        signInRedirect.then((credential) => {
+            resolve(credential)
         })
         .catch((error) => {
-            console.log(error);
             reject(error);
         });
     });
