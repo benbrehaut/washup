@@ -17,6 +17,9 @@ function Profile() {
     const user = useContext(UserContext);
     const [alert, dispatch] = useContext(AlertContext);
 
+    /**
+     * When the user signs out, dispatch an alert
+     */
     const signOut = () => {
         auth.signOut().then(() => {
             route('/', true);

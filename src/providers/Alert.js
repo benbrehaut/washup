@@ -4,12 +4,14 @@ import {alertReducer} from '../reducers/Alerts';
 
 export const AlertContext = createContext(null);
 
-function AlertProvider(props) {
+function AlertProvider({
+    children
+}) {
     const reducer = useReducer(alertReducer, []);
 
     return (
         <AlertContext.Provider value={reducer}>
-            {props.children}
+            {children}
         </AlertContext.Provider>
   );
 };

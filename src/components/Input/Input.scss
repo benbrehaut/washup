@@ -1,12 +1,10 @@
+/// ============================================================================
+/// @group components/input
+/// ============================================================================
+
 .c-input {
     align-items: center;
     display: flex;
-}
-
-.c-input__label {
-    font-size: var(--font-size-1);
-    font-weight: bold;
-    margin-right: var(--spacing-2);
 }
 
 .c-input__field {

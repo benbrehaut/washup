@@ -16,6 +16,7 @@ const AlertsContainer = () => {
         <div class="c-alerts-container" aria-live="assertive">
             {alerts.map((alert) => {
                 const alertID = alert.id;
+                
                 return (
                     <Alert key={alertID} id={alertID} status={alert.type} onClick={() => handleAlertRemoval(alertID)}>
                         {alert.message}

@@ -19,17 +19,9 @@ const provider = new firebase.auth.GoogleAuthProvider();
 export const auth = firebase.auth();
 export const firestore = firebase.firestore();
 
-export const SignInWithGoogle = () => {
-    const googleSignInPromise = new Promise((resolve, reject) => {
-        const signInRedirect = auth.signInWithRedirect(provider)
-        
-        signInRedirect.then((credential) => {
-            resolve(credential)
-        })
-        .catch((error) => {
-            reject(error);
-        });
-    });
-
-    return googleSignInPromise;
+/**
+ * Sign the user in through Google
+ */
+export const SignIn = () => {
+    auth.signInWithRedirect(provider);
 };
