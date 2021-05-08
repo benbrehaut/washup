@@ -4,53 +4,52 @@
 
 .c-btn {
     $outline-offset: -2px;
+    align-items: center;
     appearance: none;
-    border: 1px solid var(--color-blue);
     background-color: var(--color-blue);
-    border: 0;
+    border: 1px solid var(--color-blue);
     border-radius: var(--border-radius);
     color: var(--color-white);
     cursor: pointer;
     display: inline-flex;
-    align-items: center;
+    font-family: inherit;
+    font-size: var(--font-size-3);
     justify-content: center;
+    min-height: 4.2rem;
+    min-width: 5.9rem;
     padding: var(--spacing-3) var(--spacing-1);
     position: relative;
-    font-family: inherit;
-    min-width: 5.9rem;
-    min-height: 4.2rem;
-    font-size: var(--font-size-3);
-    transition: background 200ms ease-in-out;
     text-decoration: none;
+    transition: background 200ms ease-in-out;
 
     &:focus {        
         &::after {
-            content: '';
             border-radius: var(--border-radius);
-            position: absolute;
-            top: $outline-offset;
-            left: $outline-offset;
             bottom:$outline-offset;
-            right: $outline-offset;
-            display: block;
-            outline: 2px solid transparent;
             box-shadow: 0 0 0 2px var(--color-orange);
+            content: '';
+            display: block;
+            left: $outline-offset;
+            outline: 2px solid transparent;
+            position: absolute;
+            right: $outline-offset;
+            top: $outline-offset;
         }
     }
 }
 
 .c-btn__spinner {
     animation: btn-spinner 0.5s linear infinite;
+    left: 50%;
+    margin-left: -1rem;
+    margin-top: -1rem;
     position: absolute;
     top: 50%;
-    left: 50%;
-    margin-top: -1rem;
-    margin-left: -1rem;
 
     svg {
+        fill: var(--color-white);
         height: 2rem;
         width: 2rem;
-        fill: var(--color-white);
     }
 
     @keyframes btn-spinner {

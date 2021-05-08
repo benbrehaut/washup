@@ -15,11 +15,11 @@
     --font-size-1: 2.2rem;
     --font-size-2: 1.6rem;
     --font-size-3: 1.4rem;
-    --spacing-1: 2.0rem;
+    --spacing-1: 2rem;
     --spacing-2: 1.6rem;
-    --spacing-3: 1.0rem;
-    --layout-max-width: 60.0rem;
-    --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    --spacing-3: 1rem;
+    --layout-max-width: 60rem;
+    --font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
     --border-radius: 3px;
     --border-radius-large: 8px;
 }
@@ -27,16 +27,16 @@
 html {
     box-sizing: border-box;
     font-size: 62.5%;
-    text-size-adjust: 100%;
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
+    text-size-adjust: 100%;
 }
 
 body {
     background-color: var(--color-background);
     color: var(--color-grey);
-    font-size: var(--font-size-2);
     font-family: var(--font-family);
+    font-size: var(--font-size-2);
     margin: 0;
 }
   
@@ -55,13 +55,13 @@ body {
 }
 
 .o-app__container {
-    max-width: var(--layout-max-width);
     margin-left: auto;
     margin-right: auto;
-    width: 100%;
+    max-width: var(--layout-max-width);
     padding-left: var(--spacing-3);
     padding-right: var(--spacing-3);
     position: relative;
+    width: 100%;
 }
 
 // Utilities
