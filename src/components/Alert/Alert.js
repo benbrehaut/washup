@@ -42,27 +42,28 @@ const Alert = ({
             case STATUS_ERROR:
                 return {
                     Icon: AlertIcon,
-                    className: `${defaultClassName} c-alert--error`
+                    className: `${defaultClassName} c-alert--error`,
+                    type: 'error'
                 };
             default:
                 return {
                     Icon: TickIcon,
-                    className: defaultClassName
+                    className: defaultClassName,
+                    type: 'success'
                 };
         }
     }
-    const {Icon, className} = alertStatus(status);
+    const {Icon, className, type} = alertStatus(status);
 
     const componentClasses = classNames(
         className,
         isActive && 'is-active'
     );
 
-
     return (
         <div class={componentClasses} role="alert" {...commonProps}>
             <span class={`${defaultClassName}__icon`}>
-                <Icon />
+                <Icon data-testid={`icon-${type}`} />
             </span>
 
             <span class={`${defaultClassName}__text`}>
