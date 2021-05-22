@@ -1,5 +1,5 @@
-import {h} from 'preact';
-import {useState} from 'preact/hooks';
+import { h, Fragment } from 'preact';
+import { useState } from 'preact/hooks';
 import './Avatar.scss';
 
 import AvaterIcon from './../../icons/avatar.svg';
@@ -26,7 +26,7 @@ const Avatar = ({
                 </>
                 :
                 <>
-                    <AvaterIcon />
+                    <AvaterIcon data-testid="avatar-fallback-img" />
                 </>
             }
         </span>
