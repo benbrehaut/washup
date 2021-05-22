@@ -9,7 +9,8 @@
     "serve": "sirv build --port 8080 --cors --single ",
     "lint:js": "eslint ./src",
     "lint:scss": "stylelint ./src/**/**/**/*.scss",
-    "test": "npm run lint:scss && npm run lint:js"
+    "test": "npm run lint:scss && npm run lint:js",
+    "test:watch": "jest --watchAll"
   },
   "eslintConfig": {
     "extends": "preact",
@@ -18,12 +19,17 @@
     ]
   },
   "devDependencies": {
+    "@testing-library/preact": "^2.0.1",
+    "@types/jest": "^26.0.23",
     "eslint": "^6.0.1",
     "eslint-config-airbnb": "^18.2.1",
     "eslint-config-preact": "^1.1.0",
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-jsx-a11y": "^6.4.1",
     "firebase": "^8.2.9",
+    "jest": "^26.6.3",
+    "jest-preset-preact": "^4.0.3",
+    "jest-svg-transformer": "^1.0.0",
     "node-sass": "^5.0.0",
     "preact-async-route": "^2.2.1",
     "preact-cli": "^3.0.0",
