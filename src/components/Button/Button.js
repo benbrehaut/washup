@@ -7,7 +7,7 @@ import Spinner from './../../icons/spinner.svg';
 function Button({
     children,
     onClick,
-    type,
+    type = 'button',
     href,
     icon,
     hiddenLabel,
@@ -29,7 +29,7 @@ function Button({
 
     const buttonContents = loading ? (
         <span class="c-btn__spinner">
-            <Spinner />
+            <Spinner data-testid="loading-icon" />
         </span>
     ) : (
         <span class="c-btn__content">
