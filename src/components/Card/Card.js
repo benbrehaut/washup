@@ -6,7 +6,7 @@ const Card = ({
     title, 
     children
 }) => (
-	<section class="c-card">
+	<section class="c-card" data-testid="card">
         <VisuallyHidden element="h2">
             {title}
         </VisuallyHidden>
